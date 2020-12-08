@@ -342,6 +342,7 @@ class QWeb(object):
         def _compiled_fn(self, append, values):
             log = {'last_path_node': None}
             new = self.default_values()
+            new.update(values)
             wrap_values(new)
             try:
                 return compiled(self, append, new, options, log)
